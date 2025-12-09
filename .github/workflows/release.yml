@@ -17,6 +17,8 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
+        with:
+          version: 8
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -26,7 +28,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Build core package
         run: pnpm --filter electron-license-kit build
