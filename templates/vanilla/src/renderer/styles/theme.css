@@ -1,0 +1,35 @@
+/**
+ * Theme CSS Variables
+ * Fallback defaults, overridden by electron-license-kit
+ */
+
+:root {
+  --elk-primary: #6366f1;
+  --elk-primary-hover: #4f46e5;
+  --elk-primary-text: #ffffff;
+  --elk-primary-rgb: 99, 102, 241;
+  --elk-bg: #0a0a0f;
+  --elk-bg-secondary: #111118;
+  --elk-bg-tertiary: #1a1a24;
+  --elk-text: #ffffff;
+  --elk-text-secondary: #a1a1aa;
+  --elk-text-tertiary: #71717a;
+  --elk-success: #22c55e;
+  --elk-warning: #f59e0b;
+  --elk-error: #ef4444;
+  --elk-info: #3b82f6;
+  --elk-border: #27272a;
+  --elk-divider: #3f3f46;
+  --elk-titlebar-bg: #0a0a0f;
+  --elk-titlebar-text: #ffffff;
+  --elk-titlebar-btn-hover: #27272a;
+  --elk-titlebar-btn-close: #ef4444;
+  --elk-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --elk-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.5);
+  --elk-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+  --elk-radius-sm: 4px;
+  --elk-radius-md: 8px;
+  --elk-radius-lg: 12px;
+  --elk-radius-full: 9999px;
+}
+

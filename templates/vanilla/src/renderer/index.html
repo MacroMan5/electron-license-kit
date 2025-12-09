@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';"
+    />
+    <title>My Electron App</title>
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/titlebar.css" />
+    <link rel="stylesheet" href="styles/auth.css" />
+  </head>
+  <body>
+    <div class="titlebar">
+      <div class="titlebar-drag">
+        <span class="titlebar-title">My Electron App</span>
+      </div>
+      <div class="titlebar-controls">
+        <button class="titlebar-btn" id="btn-minimize" title="Minimize">
+          <svg width="12" height="12" viewBox="0 0 12 12">
+            <rect fill="currentColor" width="10" height="1" x="1" y="6" />
+          </svg>
+        </button>
+        <button class="titlebar-btn" id="btn-maximize" title="Maximize">
+          <svg width="12" height="12" viewBox="0 0 12 12">
+            <rect stroke="currentColor" fill="none" width="9" height="9" x="1.5" y="1.5" />
+          </svg>
+        </button>
+        <button class="titlebar-btn titlebar-btn-close" id="btn-close" title="Close">
+          <svg width="12" height="12" viewBox="0 0 12 12">
+            <line
+              x1="3"
+              y1="3"
+              x2="9"
+              y2="9"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+            <line
+              x1="9"
+              y1="3"
+              x2="3"
+              y2="9"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="app-content">
+      <div id="auth-view" class="view">
+        <div class="auth-container">
+          <div class="auth-logo">
+            <img src="../../assets/logo.png" alt="Logo" width="64" height="64" />
+          </div>
+          <h1 class="auth-title">Welcome</h1>
+          <p class="auth-subtitle">Sign in or create an account to continue.</p>
+
+          <form id="login-form" class="auth-form">
+            <div class="form-group">
+              <label for="login-email">Email</label>
+              <input id="login-email" type="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="login-password">Password</label>
+              <input id="login-password" type="password" placeholder="••••••••" required />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+          </form>
+
+          <form id="register-form" class="auth-form hidden">
+            <div class="form-group">
+              <label for="register-email">Email</label>
+              <input id="register-email" type="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="register-password">Password</label>
+              <input id="register-password" type="password" placeholder="••••••••" required />
+            </div>
+            <div class="form-group">
+              <label for="register-license">License Key</label>
+              <input
+                id="register-license"
+                type="text"
+                placeholder="APP-XXXX-XXXX-XXXX"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+          </form>
+
+          <div id="auth-error" class="auth-error hidden"></div>
+
+          <div class="auth-links">
+            <a href="#" id="show-register">Need an account?</a>
+            <span class="separator">•</span>
+            <a href="#" id="show-reset">Forgot password?</a>
+          </div>
+          <div id="register-links" class="auth-links hidden">
+            <a href="#" id="show-login">Already have an account?</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="app-view" class="view hidden">
+        <div class="app-header">
+          <h1>Dashboard</h1>
+          <p class="text-secondary">
+            You are logged in. This is where your app UI goes.
+          </p>
+        </div>
+
+        <div class="app-card">
+          <h2>License Status</h2>
+          <div id="license-info" class="text-secondary">
+            Loading license information...
+          </div>
+        </div>
+
+        <div class="app-card">
+          <h2>Actions</h2>
+          <button class="btn btn-secondary" id="btn-logout">Log out</button>
+        </div>
+
+        <div class="app-footer">
+          <p class="text-secondary">
+            Built with <code>electron-license-kit</code>. Customize this page in
+            <code>src/renderer/js/app.ts</code>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/titlebar.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>
+

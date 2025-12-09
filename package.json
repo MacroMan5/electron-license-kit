@@ -1,0 +1,29 @@
+{
+  "name": "electron-license-kit-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Open-source framework for building licensed Electron apps with Supabase",
+  "scripts": {
+    "build": "pnpm -r build",
+    "dev": "pnpm -r dev",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "clean": "pnpm -r clean",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "keywords": [
+    "electron",
+    "license",
+    "supabase",
+    "desktop-app",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.0"
+}
+
