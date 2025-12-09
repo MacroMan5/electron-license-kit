@@ -18,7 +18,8 @@ import {
   loadEnvFiles,
 } from 'electron-license-kit';
 import { registerIpcHandlers } from './ipc-handlers';
-import appConfig from '../../app.config';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const appConfig = require('../../app.config').default;
 
 loadEnvFiles(path.join(__dirname, '../..'), app.isPackaged);
 

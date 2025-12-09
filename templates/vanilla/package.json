@@ -6,10 +6,13 @@
   "author": "Your Name",
   "license": "MIT",
   "scripts": {
-    "start": "tsc && electron .",
-    "dev": "tsc && electron . --dev",
-    "build": "tsc && electron-builder --win",
-    "build:portable": "tsc && electron-builder --win portable",
+    "copy:static": "npx copyfiles -u 1 src/renderer/**/*.html src/renderer/**/*.css dist",
+    "compile:config": "npx tsc app.config.ts --outDir dist --esModuleInterop --skipLibCheck",
+    "prebuild:dev": "npm run copy:static && npm run compile:config",
+    "start": "tsc && npm run prebuild:dev && electron .",
+    "dev": "tsc && npm run prebuild:dev && electron . --dev",
+    "build": "tsc && npm run prebuild:dev && electron-builder --win",
+    "build:portable": "tsc && npm run prebuild:dev && electron-builder --win portable",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix",
     "format": "prettier --write \"src/**/*.{ts,css,html}\"",
@@ -27,7 +30,8 @@
     "eslint": "^8.55.0",
     "@typescript-eslint/eslint-plugin": "^6.13.0",
     "@typescript-eslint/parser": "^6.13.0",
-    "prettier": "^3.1.0"
+    "prettier": "^3.1.0",
+    "copyfiles": "^2.4.1"
   },
   "build": {
     "appId": "com.example.myapp",

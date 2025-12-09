@@ -40,7 +40,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MacroMan5/electron-license-kit.git"
+    "url": "git+https://github.com/MacroMan5/electron-license-kit.git"
   },
   "bugs": {
     "url": "https://github.com/MacroMan5/electron-license-kit/issues"
