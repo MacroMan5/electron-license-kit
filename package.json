@@ -4,12 +4,12 @@
   "private": true,
   "description": "Open-source framework for building licensed Electron apps with Supabase",
   "scripts": {
-    "build": "pnpm -r build",
-    "dev": "pnpm -r dev",
-    "lint": "pnpm -r lint",
-    "test": "pnpm -r test",
-    "clean": "pnpm -r clean",
-    "typecheck": "pnpm -r typecheck"
+    "build": "pnpm --filter electron-license-kit build",
+    "dev": "pnpm --filter electron-license-kit dev",
+    "lint": "pnpm --filter electron-license-kit lint",
+    "test": "pnpm --filter electron-license-kit test",
+    "clean": "pnpm --filter electron-license-kit clean",
+    "typecheck": "pnpm --filter electron-license-kit typecheck"
   },
   "keywords": [
     "electron",
